@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lawn Mowing Data Collection</title>
+</head>
+<body>
+    <h1>Enter Lawn Mowing Data</h1>
+    <form method="POST" action="/submit">
+        <label for="lawn_size">Lawn Size (sq ft):</label><br>
+        <input type="text" id="lawn_size" name="lawn_size"><br>
+        <label for="terrain">Terrain Difficulty (1=Easy, 2=Moderate, 3=Hard):</label><br>
+        <input type="text" id="terrain" name="terrain"><br>
+        <label for="grass">Grass Height (1=Short, 2=Medium, 3=Tall):</label><br>
+        <input type="text" id="grass" name="grass"><br>
+        <label for="location">Location Type (1=Urban, 2=Suburban, 3=Rural):</label><br>
+        <input type="text" id="location" name="location"><br>
+        <label for="cost">Mowing Cost ($):</label><br>
+        <input type="text" id="cost" name="cost"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
