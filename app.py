@@ -1,5 +1,6 @@
-from flask import Flask, request, render_template, redirect
+from flask import Flask, jsonify, request, render_template, redirect
 import csv
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -15,9 +16,19 @@ try:
 except FileExistsError:
     pass
 
+# Function to read data from CSV
+def load_data_from_csv(file_path):
+    df = pd.read_csv(data_file)
+    return df.to_dict(orient='records')
+
 @app.route('/')
 def index():
     return render_template('form.html')
+
+@app.route('/api/lawn_data', methods=['GET'])
+def get_lawn_data():
+    lawn_data = load_data_from_csv(data_file)
+    return jsonify(lawn_data)
 
 @app.route('/submit', methods=['POST'])
 def submit():

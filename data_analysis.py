@@ -5,4 +5,4 @@ data = pd.read_csv("lawn_mowing_data.csv")
 
 # Perform analysis
 print("Summary of collected data:")
-print(data.describe())
+print(data.describe().round(2))
